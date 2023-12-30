@@ -89,4 +89,10 @@ class Student {
     public String getLastName() {
         return lastName;
     }
+
+    /* 2) Продемонстрировать применение модификатора protected */
+    protected void printFullNameAndEmail() {
+        System.out.println("Полное имя: " + getFullName());
+        System.out.println("Email: " + email);
+    }
 }
