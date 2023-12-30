@@ -4,6 +4,7 @@ import java.util.List;
 class InternationalStudent extends Student {
     private String country;
 
+    /* 4) Вызов конструктора базового класса */
     public InternationalStudent(String firstName, String lastName, String dateOfBirth, String studentID, String email, List<Grade> grades, String country) {
         super(firstName, lastName, dateOfBirth, studentID, email, grades);
         this.country = country;
