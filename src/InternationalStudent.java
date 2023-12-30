@@ -19,5 +19,11 @@ class InternationalStudent extends Student {
         System.out.println("Страна: " + country);
     }
 
-
+    /* 3) Продемонстрировать перегрузку метода базового класса в производном классе
+    * Добавим в класс InternationalStudent перегруженный метод printFullNameAndEmail: */
+    @Override
+    protected void printFullNameAndEmail() {
+        super.printFullNameAndEmail();
+        System.out.println("Страна: " + country);
+    }
 }
