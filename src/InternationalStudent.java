@@ -18,4 +18,10 @@ class InternationalStudent extends Student {
         super.printStudent();
         System.out.println("Страна: " + country);
     }
+
+    /* 2) Продемонстрировать применение модификатора protected */
+    protected void printFullNameAndEmail() {
+        System.out.println("Полное имя: " + getFullName());
+        System.out.println("Email: " + email);
+    }
 }
