@@ -2,8 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/* 7) Использование интерфейсов. Для гарантии того что студент имеет email */
+interface HasEmail {
+    String getEmail();
+}
+
 /* 6) Абс класс в классе Person */
-class Student extends Person{
+class Student extends Person implements HasEmail, Cloneable{
 
     public String studentID;
     public String email;
@@ -110,6 +115,24 @@ class Student extends Person{
         }
 
         return result.toString();
+    }
+
+    /* 7) Использование интерфейсов. Для гарантии того что студент имеет email */
+    @Override
+    public String getEmail() {
+        return email;
+    }
+
+    /* 8) Клонирование */
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Student clonedStudent = (Student) super.clone();
+        // Глубокое клонирование grades
+        clonedStudent.grades = new ArrayList<>(this.grades.size());
+        for (Grade grade : this.grades) {
+            clonedStudent.grades.add((Grade) grade.clone());
+        }
+        return clonedStudent;
     }
 
 }

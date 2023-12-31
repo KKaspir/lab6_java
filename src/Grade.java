@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Grade {
+class Grade implements Cloneable{
     private String subject;
     private double score;
     private String date;
@@ -44,5 +44,11 @@ class Grade {
 
     public double getScore() {
         return score;
+    }
+
+    // теперь clone вызывает super.clone() для глубокого клонирования
+    @Override
+    protected Grade clone() throws CloneNotSupportedException {
+        return (Grade) super.clone();
     }
 }
