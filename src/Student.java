@@ -2,10 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Student {
-    public String firstName;
-    public String lastName;
-    public String dateOfBirth;
+/* 6) Абс класс в классе Person */
+class Student extends Person{
+
     public String studentID;
     public String email;
     public List<Grade> grades;
@@ -95,4 +94,22 @@ class Student {
         System.out.println("Полное имя: " + getFullName());
         System.out.println("Email: " + email);
     }
+
+    /* 5) Замена методов Display с использованием toString */
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append("Имя: ").append(firstName).append("\n");
+        result.append("Фамилия: ").append(lastName).append("\n");
+        result.append("Дата рождения: ").append(dateOfBirth).append("\n");
+        result.append("Номер студенческого билета: ").append(studentID).append("\n");
+        result.append("Email: ").append(email).append("\n\nОценки:\n");
+
+        for (Grade grade : grades) {
+            result.append(grade.toString()).append("\n");
+        }
+
+        return result.toString();
+    }
+
 }
