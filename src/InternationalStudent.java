@@ -27,4 +27,11 @@ class InternationalStudent extends Student {
         super.printFullNameAndEmail();
         System.out.println("Страна: " + country);
     }
+
+    // Новый метод для вывода полного имени, email и страны
+    protected void printFullNameAndEmailWithCountry() {
+        System.out.println("Полное имя: " + getFullName());
+        System.out.println("Email: " + getEmail());
+        System.out.println("Страна: " + country);
+    }
 }
